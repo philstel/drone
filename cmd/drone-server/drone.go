@@ -5,15 +5,15 @@ import (
 	"html/template"
 	"net/http"
 
-	"github.com/drone/drone/Godeps/_workspace/src/github.com/gin-gonic/gin"
+	"github.com/gin-gonic/gin"
 
-	"github.com/drone/drone/Godeps/_workspace/src/github.com/elazarl/go-bindata-assetfs"
 	"github.com/drone/drone/pkg/config"
-	"github.com/drone/drone/pkg/remote/builtin/github"
+	"github.com/drone/drone/pkg/remote/builtin/bitbucket"
 	"github.com/drone/drone/pkg/server"
 	"github.com/drone/drone/pkg/server/session"
+	"github.com/elazarl/go-bindata-assetfs"
 
-	log "github.com/drone/drone/Godeps/_workspace/src/github.com/Sirupsen/logrus"
+	log "github.com/Sirupsen/logrus"
 	eventbus "github.com/drone/drone/pkg/bus/builtin"
 	queue "github.com/drone/drone/pkg/queue/builtin"
 	runner "github.com/drone/drone/pkg/runner/builtin"
@@ -46,7 +46,7 @@ func main() {
 	store := store.New(db)
 	defer db.Close()
 
-	remote := github.New(settings)
+	remote := bitbucket.New(settings)
 	session := session.New(settings)
 	eventbus_ := eventbus.New()
 	queue_ := queue.New()

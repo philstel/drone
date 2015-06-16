@@ -22,7 +22,7 @@ import (
 	"time"
 	"unicode"
 
-	"github.com/drone/drone/Godeps/_workspace/src/github.com/lib/pq/oid"
+	"github.com/lib/pq/oid"
 )
 
 // Common error types

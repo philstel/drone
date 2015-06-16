@@ -7,7 +7,7 @@ package binding
 import (
 	"net/http"
 
-	"github.com/drone/drone/Godeps/_workspace/src/gopkg.in/joeybloggs/go-validate-yourself.v4"
+	"gopkg.in/joeybloggs/go-validate-yourself.v4"
 )
 
 const (

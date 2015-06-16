@@ -7,7 +7,7 @@ package gin
 import (
 	"os"
 
-	"github.com/drone/drone/Godeps/_workspace/src/github.com/mattn/go-colorable"
+	"github.com/mattn/go-colorable"
 )
 
 const GIN_MODE = "GIN_MODE"

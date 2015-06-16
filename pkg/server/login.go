@@ -5,10 +5,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/drone/drone/Godeps/_workspace/src/github.com/gin-gonic/gin"
-	"github.com/drone/drone/Godeps/_workspace/src/github.com/ungerik/go-gravatar"
+	"github.com/gin-gonic/gin"
+	"github.com/ungerik/go-gravatar"
 
-	log "github.com/drone/drone/Godeps/_workspace/src/github.com/Sirupsen/logrus"
+	log "github.com/Sirupsen/logrus"
 	"github.com/drone/drone/pkg/oauth2"
 	common "github.com/drone/drone/pkg/types"
 	"github.com/drone/drone/pkg/utils/httputil"
@@ -35,6 +35,7 @@ func GetLogin(c *gin.Context) {
 	// authenticate with OAuth1, OAuth2 or Basic
 	// Auth (username and password). This will delegate
 	// authorization accordingly.
+
 	switch {
 	// case settings.Auth == nil:
 	// 	getLoginBasic(c)
@@ -142,7 +143,7 @@ func getLoginOauth2(c *gin.Context) {
 		Scope:        strings.Join(settings.Auth.Scope, ","),
 		AuthURL:      settings.Auth.Authorize,
 		TokenURL:     settings.Auth.AccessToken,
-		RedirectURL:  fmt.Sprintf("%s/authorize", httputil.GetURL(c.Request)),
+		RedirectURL:  fmt.Sprintf("%s/authorize", httputil.GetURL(c.Request)), //"http://goo.gl/pDwyEj",
 		//settings.Server.Scheme, settings.Server.Hostname),
 	}
 
@@ -154,7 +155,6 @@ func getLoginOauth2(c *gin.Context) {
 		c.Redirect(303, config.AuthCodeURL("random"))
 		return
 	}
-
 	// exhange for a token
 	var trans = &oauth2.Transport{Config: config}
 	var token, err = trans.Exchange(code)

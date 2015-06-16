@@ -11,8 +11,8 @@ import (
 	"os"
 	"sync"
 
-	"github.com/drone/drone/Godeps/_workspace/src/github.com/gin-gonic/gin/binding"
-	"github.com/drone/drone/Godeps/_workspace/src/github.com/gin-gonic/gin/render"
+	"github.com/gin-gonic/gin/binding"
+	"github.com/gin-gonic/gin/render"
 )
 
 var default404Body = []byte("404 page not found")

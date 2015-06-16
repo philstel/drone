@@ -5,7 +5,7 @@ import (
 	"os"
 	"time"
 
-	"github.com/drone/drone/Godeps/_workspace/src/github.com/vrischmann/envconfig"
+	"github.com/vrischmann/envconfig"
 )
 
 func ExampleInit() {

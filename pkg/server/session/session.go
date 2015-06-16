@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/drone/drone/Godeps/_workspace/src/github.com/dgrijalva/jwt-go"
+	"github.com/dgrijalva/jwt-go"
 	"github.com/drone/drone/pkg/config"
 	common "github.com/drone/drone/pkg/types"
 )

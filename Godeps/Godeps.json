@@ -25,6 +25,14 @@
 			"Rev": "c48cfd5d9711c75acb6036d2698ef3aef7bb655a"
 		},
 		{
+			"ImportPath": "github.com/drone/go-bitbucket/bitbucket",
+			"Rev": "ba761238e76830e4d552e84bc526d08b12af05cd"
+		},
+		{
+			"ImportPath": "github.com/drone/go-bitbucket/oauth1",
+			"Rev": "ba761238e76830e4d552e84bc526d08b12af05cd"
+		},
+		{
 			"ImportPath": "github.com/elazarl/go-bindata-assetfs",
 			"Rev": "bea323321994103859d60197d229f1a94699dde3"
 		},

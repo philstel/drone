@@ -3,8 +3,8 @@ package mockclient
 import (
 	"io"
 
-	"github.com/drone/drone/Godeps/_workspace/src/github.com/samalba/dockerclient"
-	"github.com/drone/drone/Godeps/_workspace/src/github.com/stretchr/testify/mock"
+	"github.com/samalba/dockerclient"
+	"github.com/stretchr/testify/mock"
 )
 
 type MockClient struct {
