@@ -10,6 +10,8 @@ import (
 	"fmt"
 	"time"
 	"regexp"
+
+	log "github.com/Sirupsen/logrus"
 )
 
 const (
@@ -142,6 +144,7 @@ func (b *Bitbucket) Script(u *common.User, r *common.Repo, c *common.Commit) ([]
 	)
 
 	// get the yaml from the database
+	log.Infof("asddsasad saddasdasasdand running build %s", c.Sha)
 	var raw, err = client.Sources.Find(r.Owner, r.Name, c.Sha, ".drone.yml")
 	if err != nil {
 		return nil, err
@@ -264,7 +267,7 @@ func (b *Bitbucket) Hook(r *http.Request) (*common.Hook, error) {
 		repo.Owner = hook.Repo.Name
 	}
 	repo.Name = hook.Repo.Name
-	repo.FullName = hook.Repo.Name
+	repo.FullName = hook.Repo.Owner + "/" + hook.Repo.Name
 	repo.Link = hook.Repo.Scm
 	repo.Private = hook.Repo.Private
 	repo.Clone = hook.Url

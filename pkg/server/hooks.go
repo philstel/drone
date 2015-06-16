@@ -15,7 +15,7 @@ import (
 // PostHook accepts a post-commit hook and parses the payload
 // in order to trigger a build.
 //
-//     GET /api/hook
+//     POST /api/hook
 //
 func PostHook(c *gin.Context) {
 	remote := ToRemote(c)
@@ -89,7 +89,7 @@ func PostHook(c *gin.Context) {
 	commit.State = common.StatePending
 	commit.RepoID = repo.ID
 
-	// featch the .drone.yml file from the database
+	// fetch the .drone.yml file from the database
 	raw, err := remote.Script(user, repo, commit)
 	if err != nil {
 		log.Errorf("failure to get .drone.yml for %s. %s", repo.FullName, err)
